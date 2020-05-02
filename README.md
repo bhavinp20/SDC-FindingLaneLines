@@ -54,6 +54,8 @@ My pipeline consisted of 10 steps.
 
 6. Create region of interest
 \
+![image1](/images_for_writeup/maskedOutRegionImage.jpeg)
+\
 ![image1](/images_for_writeup/7_maskedEdgeImage.jpg)
 
 7. Use Hough tranform function to locate lines
@@ -72,14 +74,10 @@ My pipeline consisted of 10 steps.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+The current pipeline can only detect lanes which are straight. For the parameters of the canny edge and hough functions, trial-and-error method was used to obtain desired results. Also Region of Interest assumes that camera stays at same location and lanes are flat. So there was some assumtions work involved and hard coding in deciding polygon vertices.
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+In general, there are many roads which might not be with lane markings and this pipeline is not robust enough work in different weather conditions (eg. snowing, cloudy, raining, etc.) where this won’t work.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+To make this more robust we can introduce a higher degree curve that will be useful on curved road.
